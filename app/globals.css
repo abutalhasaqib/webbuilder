@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Theme variables */
+:root {
+  /* default to pastel */
+  --bg: 210 60% 99%;
+  --fg: 222 47% 11%;
+  --muted: 218 20% 65%;
+  --border: 214 32% 91%;
+  --card: 0 0% 100%;
+  --accent: 230 100% 97%;
+
+  /* gradient stops */
+  --grad1: #fef3c7; /* amber-100 */
+  --grad2: #e0e7ff; /* indigo-100 */
+  --grad3: #dcfce7; /* green-100 */
+  --grad4: #fce7f3; /* pink-100 */
+}
+
+[data-theme="pastel"] {
+  --bg: 210 60% 99%;
+  --fg: 222 47% 11%;
+  --muted: 218 20% 65%;
+  --border: 214 32% 91%;
+  --card: 0 0% 100%;
+  --accent: 230 100% 97%;
+  --grad1: #fef3c7;
+  --grad2: #e0e7ff;
+  --grad3: #dcfce7;
+  --grad4: #fce7f3;
+}
+
+[data-theme="midnight"] {
+  --bg: 222 40% 6%;
+  --fg: 220 15% 90%;
+  --muted: 220 10% 60%;
+  --border: 220 15% 20%;
+  --card: 222 28% 10%;
+  --accent: 222 40% 16%;
+  --grad1: #0f172a; /* slate-900 */
+  --grad2: #1e293b; /* slate-800 */
+  --grad3: #172554; /* indigo-950 */
+  --grad4: #111827; /* gray-900 */
+}
+
+[data-theme="sunset"] {
+  --bg: 18 100% 98%;
+  --fg: 20 14% 15%;
+  --muted: 20 15% 45%;
+  --border: 18 60% 92%;
+  --card: 0 0% 100%;
+  --accent: 12 100% 97%;
+  --grad1: #ffedd5; /* orange-100 */
+  --grad2: #fecaca; /* red-200 */
+  --grad3: #fde68a; /* yellow-200 */
+  --grad4: #e9d5ff; /* purple-200 */
+}
+
+[data-theme="mint"] {
+  --bg: 164 60% 97%;
+  --fg: 165 12% 15%;
+  --muted: 165 10% 40%;
+  --border: 164 30% 85%;
+  --card: 0 0% 100%;
+  --accent: 156 100% 97%;
+  --grad1: #d1fae5; /* emerald-100 */
+  --grad2: #bae6fd; /* sky-200 */
+  --grad3: #fef3c7; /* amber-100 */
+  --grad4: #fbcfe8; /* pink-200 */
+}
+
+[data-theme="lavender"] {
+  --bg: 246 60% 98%;
+  --fg: 250 15% 18%;
+  --muted: 250 12% 45%;
+  --border: 246 30% 90%;
+  --card: 0 0% 100%;
+  --accent: 250 100% 97%;
+  --grad1: #ede9fe; /* violet-100 */
+  --grad2: #e9d5ff; /* purple-200 */
+  --grad3: #dbeafe; /* blue-100 */
+  --grad4: #fce7f3; /* pink-100 */
+}
+
+html, body { height: 100%; }
+
+.gradient-bg {
+  background:
+    radial-gradient(60% 80% at 20% 10%, var(--grad1) 0%, transparent 60%),
+    radial-gradient(60% 80% at 90% 10%, var(--grad2) 0%, transparent 60%),
+    radial-gradient(60% 80% at 10% 90%, var(--grad3) 0%, transparent 60%),
+    radial-gradient(60% 80% at 90% 90%, var(--grad4) 0%, transparent 60%),
+    hsl(var(--bg));
+}
+
+.card { @apply bg-card rounded-xl border border-[hsl(var(--border))] shadow-soft; }
+
+.btn { @apply inline-flex items-center justify-center rounded-xl px-4 py-2 text-sm font-medium transition-colors; }
+.btn-primary { @apply bg-blue-500 text-white hover:bg-blue-600; }
+.btn-danger { @apply bg-rose-500 text-white hover:bg-rose-600; }
+.btn-ghost { @apply bg-white/60 hover:bg-white text-slate-700; }
